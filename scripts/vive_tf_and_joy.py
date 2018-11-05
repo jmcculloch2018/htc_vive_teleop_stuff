@@ -86,7 +86,7 @@ def from_matrix_to_pose_dict(matrix):
 
 
 def from_matrix_to_transform(matrix, stamp, frame_id, child_frame_id,
-                             to_ros_reference_frame=True):
+                             to_ros_reference_frame=False):
     t = TransformStamped()
     t.header.stamp = stamp
     t.header.frame_id = frame_id
