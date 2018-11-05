@@ -6,7 +6,7 @@ First, follow the [INSTALL](INSTALL.md) instructions to get Ubuntu 16.04 and Ste
 
 Install pyopenvr (it's not in `package.xml` dependencies as it needs to have HTC Vive SteamVR installed anyways, which is a manual process):
 ```bash
-sudo pip install pyopenvr
+sudo pip install openvr
 ```
 
 To run my node you'll need to have installed basic ROS TF stuff:
@@ -30,7 +30,9 @@ source devel/setup.bash
 You may also want to add [htc_vive_helper](https://github.com/uts-magic-lab/htc_vive_helper) to the workspace if you want to deal in a more user friendly fashion with the HTC Vive controllers.
 
 ## Run node
-The node you want to run is [scripts/vive_tf_and_joy.py](scripts/vive_tf_and_joy.py) which is nicely prepared in a launchfile for you.
+First, open SteamVR and roscore (if using with spartan just run spartan through docker and make sure that you add the line 
+```cmd += " --net=host" ```
+to run_docker.py)
 ```bash
 roslaunch htc_vive_teleop_stuff htc_vive_tf_and_joy.launch
 ```
